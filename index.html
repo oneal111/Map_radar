@@ -19,7 +19,7 @@
 <body>
 
   <!-- Display the map and title with HTML division tags  -->
-  <div id="map-title">EDIT map title</div>
+  <div id="map-title">O sé radar la</div>
   <div id="map"></div>
 
   <!-- Create the interactive map content with JavaScript (.js) -->
@@ -28,7 +28,7 @@
   /* Set up the initial map center and zoom level */
   var map = L.map('map', {
     center: [16.2569, -61.5481], // EDIT coordinates to re-center map
-    zoom: 12,  // EDIT from 1 (zoomed out) to 18 (zoomed in)
+    zoom: 10,  // EDIT from 1 (zoomed out) to 18 (zoomed in)
     scrollWheelZoom: false,
     tap: false
   });
@@ -43,7 +43,7 @@
 
   /* Display a point marker with pop-up text */
   L.marker([16.40919, -61.46830]).addTo(map) // EDIT marker coordinates
-  .bindPopup("BEAUPLAN - Port-Louis"); // EDIT pop-up text message
+  .bindPopup("BEAUPLAN - Port-Louis_v"); // EDIT pop-up text message
 
   </script>
 </body>
