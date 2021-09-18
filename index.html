@@ -32,6 +32,17 @@
     scrollWheelZoom: false,
     tap: false
   });
+  /* icone radar */
+  var radarTour = L.icon({
+    iconUrl: 'icon/picto-radar-tour.png',
+    shadowUrl: 'icon/ombre-radar-tour.png',
+
+    iconSize:     [38, 95], // size of the icon
+    shadowSize:   [50, 64], // size of the shadow
+    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+    shadowAnchor: [4, 62],  // the same for the shadow
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
 
   /* display basemap tiles -- see others at https://leaflet-extras.github.io/leaflet-providers/preview/ */
   L.tileLayer(
@@ -42,7 +53,7 @@
   }).addTo(map);
 
   /* Display a point marker with pop-up text */
-    L.marker([16.40919, -61.46830]).addTo(map) // EDIT marker coordinates
+    L.marker([16.40919, -61.46830], {icon: radarTour}).addTo(map) // EDIT marker coordinates
     .bindPopup("BEAUPLAN - Port-Louis_v <br/> Sens: Dans les deux sens <br/> 70km/h"); // EDIT pop-up text message
   
     L.marker([16.21058, -61.60182]).addTo(map)
