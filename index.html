@@ -43,6 +43,16 @@
     shadowAnchor: [2, 31],  // the same for the shadow
     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
+  var radarTourBurn = L.icon({
+    iconUrl: 'icon/picto-radar-burn.png',
+    shadowUrl: 'icon/ombre-radar-tour.png',
+
+    iconSize:     [19, 47], // size of the icon
+    shadowSize:   [25, 32], // size of the shadow
+    iconAnchor:   [11, 47], // point of the icon which will correspond to marker's location
+    shadowAnchor: [2, 31],  // the same for the shadow
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
 
   /* display basemap tiles -- see others at https://leaflet-extras.github.io/leaflet-providers/preview/ */
   L.tileLayer(
@@ -101,7 +111,7 @@
     L.marker([16.25515, -61.31477], {icon: radarTour}).addTo(map)
     .bindPopup("N4 - Saint-François<br />Sens: Sainte-Anne vers Saint-François<br/> 80km/h");
 
-    L.marker([16.13104, -61.57998], {icon: radarTour}).addTo(map)
+    L.marker([16.13104, -61.57998], {icon: radarTourBurn}).addTo(map)
     .bindPopup("N1 - Goyave<br />Sens: Dans les deux sens<br/> 80km/h");
 
     L.marker([16.13625, -61.58136]).addTo(map)
@@ -159,10 +169,10 @@
     .bindPopup("N5 - Le Moule<br />Sens : Dans les deux sens<br/> 50km/h");
 
     L.marker([16.35048, -61.45539], {icon: radarTour}).addTo(map)
-    .bindPopup("N6 - Morne-à-l\'Eau<br />Sens : <br/> 80km/h");
+    .bindPopup("N6 - Morne-à-l'Eau<br />Sens : <br/> 80km/h");
 
     L.marker([16.31164, -61.48649], {icon: radarTour}).addTo(map)
-    .bindPopup("N5 - Morne-à-l\'Eau<br />Sens : Dans les deux sens<br/> 50km/h");
+    .bindPopup("N5 - Morne-à-l'Eau<br />Sens : Dans les deux sens<br/> 50km/h");
 
     L.marker([15.96257, -61.70794], {icon: radarTour}).addTo(map)
     .bindPopup("D6 - Vieux-Fort<br />Sens : Dans les deux sens<br/> 50km/h");
@@ -188,7 +198,7 @@
     L.marker([16.27434, -61.50976], {icon: radarTour}).addTo(map)
     .bindPopup("N5 - Les Abymes<br />Sens : Pointe-à-Pitre vers Morne-à-l'Eau<br/> 50km/h");
 
-    L.marker([16.44138, -61.42712], {icon: radarTour}).addTo(map)
+    L.marker([16.44138, -61.42712], {icon: radarTourBurn}).addTo(map)
     .bindPopup("D120 - Anse-Bertrand<br />Sens : Dans les deux sens<br/> 80km/h");
 
 
