@@ -37,10 +37,10 @@
     iconUrl: 'icon/picto-radar-tour.png',
     shadowUrl: 'icon/ombre-radar-tour.png',
 
-    iconSize:     [38, 95], // size of the icon
-    shadowSize:   [50, 64], // size of the shadow
-    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-    shadowAnchor: [4, 62],  // the same for the shadow
+    iconSize:     [19, 47], // size of the icon
+    shadowSize:   [25, 32], // size of the shadow
+    iconAnchor:   [11, 47], // point of the icon which will correspond to marker's location
+    shadowAnchor: [2, 31],  // the same for the shadow
     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
 
@@ -107,53 +107,89 @@
     L.marker([16.13625, -61.58136]).addTo(map)
     .bindPopup("N1 - Goyave<br />Sens: Pointe-à-Pitre vers Basse-Terre<br/> 80km/h");
 
-    L.marker([16.28605, -61.28783]).addTo(map)
+    L.marker([16.28605, -61.28783], {icon: radarTour}).addTo(map)
     .bindPopup("N5 - Saint-François<br />Sens: Le Moule vers Saint-François<br/> 80km/h");
 
-    L.marker([16.25550, -61.27970]).addTo(map)
+    L.marker([16.25550, -61.27970], {icon: radarTour}).addTo(map)
     .bindPopup("D118 - Saint-François <br />Sens: Dans les deux sens<br/> 80km/h");
 
-    L.marker([16.29133, -61.28947]).addTo(map)
+    L.marker([16.29133, -61.28947], {icon: radarTour}).addTo(map)
     .bindPopup("N5 - Saint-François<br />Sens : Saint-François vers Le Moule<br/> 80km/h");
 
-    L.marker([16.26032, -61.62734]).addTo(map)
+    L.marker([16.26032, -61.62734], {icon: radarTour}).addTo(map)
     .bindPopup("N2 - Baie-Mahault<br />Sens : Dans les deux sens<br/> 80km/h");
 
-    L.marker([16.25012, -61.52297]).addTo(map)
+    L.marker([16.25012, -61.52297], {icon: radarTour}).addTo(map)
     .bindPopup("D129 - Les Abymes<br />Sens : Pointe-à-Pitre vers Les Abymes<br/> 50km/h");
 
-    L.marker([16.24169, -61.48460]).addTo(map)
+    L.marker([16.24169, -61.48460], {icon: radarTour}).addTo(map)
     .bindPopup("D103 - Le Gosier<br />Sens : Dans les deux sens<br/> 70km/h");
 
-    L.marker([16.28572, -61.50537]).addTo(map)
+    L.marker([16.28572, -61.50537], {icon: radarTour}).addTo(map)
     .bindPopup("N5 - Les Abymes<br />Sens :<br/> 110km/h");
 
-    L.marker([16.24456, -61.52406]).addTo(map)
+    L.marker([16.24456, -61.52406], {icon: radarTour}).addTo(map)
     .bindPopup("N1 - Les Abymes<br />Sens : Baie-Mahault vers Le Gosier<br/> 90km/h");
 
-    L.marker([16.25348, -61.53468]).addTo(map)
+    L.marker([16.25348, -61.53468], {icon: radarTour}).addTo(map)
     .bindPopup("N1 - Les Abymes<br />Sens : Pointe-à-Pitre vers Baie-Mahault<br/> 90km/h");
 
-    L.marker([16.26164, -61.50064]).addTo(map)
+    L.marker([16.26164, -61.50064], {icon: radarTour}).addTo(map)
     .bindPopup("D102 - Les Abymes<br />Sens : Dans les deux sens<br/> 50km/h");
 
-    L.marker([16.27801, -61.49931]).addTo(map)
+    L.marker([16.27801, -61.49931], {icon: radarTour}).addTo(map)
     .bindPopup("D126 - Les Abymes<br />Sens : Dans les deux sens<br/> 50km/h");
 
-    L.marker([16.00218, -61.72621]).addTo(map)
+    L.marker([16.00218, -61.72621], {icon: radarTour}).addTo(map)
     .bindPopup("  - Basse-Terre<br />Sens : <br/> ???km/h");
 
-    L.marker([15.98799, -61.72538]).addTo(map)
+    L.marker([15.98799, -61.72538], {icon: radarTour}).addTo(map)
     .bindPopup("N1 - Basse-Terre<br />Sens : Dans les deux sens<br/> 50km/h");
 
-    L.marker([16.03351, -61.56893]).addTo(map)
+    L.marker([16.03351, -61.56893], {icon: radarTour}).addTo(map)
     .bindPopup(" - Capesterre-Belle-Eau	<br />Sens : Dans les deux sens<br/> ???km/h");
 
-    L.marker([16.34408, -61.77201]).addTo(map)
+    L.marker([16.34408, -61.77201], {icon: radarTour}).addTo(map)
     .bindPopup("N2 - Deshaies<br />Sens : Dans les deux sens<br/> 50km/h");
 
-    L.marker([15.99042, -61.68552]).addTo(map)
+    L.marker([15.99042, -61.68552], {icon: radarTour}).addTo(map)
     .bindPopup("N1 - Gourbeyre<br />Sens : Dans les deux sens<br/> 70km/h");
+
+    L.marker([16.33006, -61.33938], {icon: radarTour}).addTo(map)
+    .bindPopup("N5 - Le Moule<br />Sens : Dans les deux sens<br/> 50km/h");
+
+    L.marker([16.35048, -61.45539], {icon: radarTour}).addTo(map)
+    .bindPopup("N6 - Morne-à-l\'Eau<br />Sens : <br/> 80km/h");
+
+    L.marker([16.31164, -61.48649], {icon: radarTour}).addTo(map)
+    .bindPopup("N5 - Morne-à-l\'Eau<br />Sens : Dans les deux sens<br/> 50km/h");
+
+    L.marker([15.96257, -61.70794], {icon: radarTour}).addTo(map)
+    .bindPopup("D6 - Vieux-Fort<br />Sens : Dans les deux sens<br/> 50km/h");
+
+    L.marker([16.08006, -61.76329], {icon: radarTour}).addTo(map)
+    .bindPopup("N2 - Vieux-Habitants<br />Sens : Dans les deux sens<br/> 50km/h");
+
+    L.marker([16.09083, -61.76717], {icon: radarTour}).addTo(map)
+    .bindPopup("N2 - Vieux-Habitants<br />Sens :Dans les deux sens<br/> 80km/h");
+
+    L.marker([16.20761, -61.44557], {icon: radarTour}).addTo(map)
+    .bindPopup("N4 - Le Gosier<br />Sens : Dans les deux sens<br/> 70km/h");
+
+    L.marker([16.24920, -61.53975], {icon: radarTour}).addTo(map)
+    .bindPopup("D126 - Les Abymes<br />Sens : Dans les deux sens<br/> 50km/h");
+
+    L.marker([16.01854, -61.74695], {icon: radarTour}).addTo(map)
+    .bindPopup("N2 - Basse-Terre<br />Sens : Dans les deux sens<br/> 50km/h");
+
+    L.marker([16.25408, -61.52315], {icon: radarTour}).addTo(map)
+    .bindPopup("N5 - Les Abymes<br />Sens : <br/> 50km/h");
+
+    L.marker([16.27434, -61.50976], {icon: radarTour}).addTo(map)
+    .bindPopup("N5 - Les Abymes<br />Sens : Pointe-à-Pitre vers Morne-à-l'Eau<br/> 50km/h");
+
+    L.marker([16.44138, -61.42712], {icon: radarTour}).addTo(map)
+    .bindPopup("D120 - Anse-Bertrand<br />Sens : Dans les deux sens<br/> 80km/h");
 
 
   </script>
