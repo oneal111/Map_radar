@@ -2,7 +2,11 @@
 	display: block;
 
 }
- 
+
+.bouton {
+  float: right;
+}
+
 .navigation {
   padding: 0;
   margin: 0;
