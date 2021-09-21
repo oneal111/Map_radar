@@ -41,7 +41,26 @@
     scrollWheelZoom: false,
     tap: false
   });
+
   map.locate({setView: true, maxZoom: 11});
+
+  function onLocationFound(e) {
+    var radius = e.accuracy;
+
+    L.marker(e.latlng).addTo(map);
+
+    L.circle(e.latlng, radius).addTo(map);
+}
+
+
+map.on('locationfound', onLocationFound);
+
+function onLocationError(e) {
+    alert(e.message);
+}
+
+map.on('locationerror', onLocationError);
+
   /* icone radar */
   var radarTour = L.icon({
     iconUrl: 'icon/picto-radar-tour.png',
