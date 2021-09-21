@@ -1,6 +1,19 @@
 
 .barreMenu {
-	
+	display: block;
+    width: 85vw;
+    height: 80px;
+    max-width: 1200px;
+    min-width: 500px;
+    margin-right: auto;
+    margin-left: auto;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    background-color: #fff;
+    box-shadow: 0 15px 80px -20px rgb(0 0 0 / 16%);
+	position: relative;
+    background: #ddd;
+    z-index: 1000;	
 }
 
 
