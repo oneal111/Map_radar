@@ -3,14 +3,11 @@
 
 }
  
-.menu{
+.navigation {
   position: static;
-  margin-left: 12%; 
 }
  
-.menuBouton {
-  text-align: center;
-  margin: 40px;
+.navigation li {
   color: #ba9550;
 }
 
