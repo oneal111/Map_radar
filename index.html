@@ -21,8 +21,8 @@
 
   <!-- Display the map and title with HTML division tags  -->
   <div id="map-title" class="barreMenu">O sé radar la 
-    <div class="menu"><a class="menuBouton" href="/Carte"> Carte</a>
-    <a class="menuBouton" href="/Contact"> Contact</a>
+    <div class="menu"><a style="text-decoration: none;" class="menuBouton" href="/Carte"> Carte</a>
+    <a style="text-decoration: none;" class="menuBouton" href="/Contact"> Contact</a>
   </div></div>
   <div id="map"></div>
   <div class="barreBas"> Copyright: O'neal Jachel</div>
@@ -33,7 +33,7 @@
   /* Set up the initial map center and zoom level */
   var map = L.map('map', {
     center: [16.2569, -61.5481], // EDIT coordinates to re-center map
-    zoom: 10,  // EDIT from 1 (zoomed out) to 18 (zoomed in)
+    zoom: 12,  // EDIT from 1 (zoomed out) to 18 (zoomed in)
     scrollWheelZoom: false,
     tap: false
   });

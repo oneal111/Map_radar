@@ -11,24 +11,30 @@
 .menuBouton {
   text-align: center;
   margin: 40px;
+  color: #ba9550;
 }
 
 .barreBas {
-  position: relative;
-    margin-left: 15%;
-    margin-right: 15%;
-    background: white;
-    display: flex;
-    padding: 9px 19px;
-    font-family: Helvetica;
-    font-weight: bold;
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
-    font-size: 24px;
-    z-index: 800;
-    align-items: center;
-    box-shadow: 0 15px 80px -20px rgb(0 0 0 / 20%);
-    text-align: center;
+  position: fixed;
+  margin-left: 21%;
+  top: auto;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  /* margin-right: 15%; */
+  background: white;
+  display: flex;
+  padding: 2px 16px;
+  /* padding-left: 31px; */
+  font-family: Helvetica;
+  font-weight: bold;
+  border-top-left-radius: 30px;
+  /* border-top-right-radius: 30px; */
+  font-size: 11px;
+  z-index: 800;
+  align-items: center;
+  box-shadow: 20px 0 80px -6px rgb(0 0 0 / 20%);
+  text-align: center;
 }
 body { 
 	margin:0; padding:0; }
