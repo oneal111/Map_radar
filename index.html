@@ -3,6 +3,7 @@
 <head>
   <title>leaflet-map-simple</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta charset="utf-8">
 
   <!-- Load Leaflet code library: see http://leafletjs.com/download.html -->
@@ -22,8 +23,9 @@
   <!-- Display the map and title with HTML division tags  -->
   <div id="map-title" class="barreMenu">O sé radar la 
     <ul class="navigation">
-      <li><a style="text-decoration: none;" class="menuBouton" href="/Carte"> Carte</a></li>
-      <li><a style="text-decoration: none;" class="menuBouton" href="/Contact"> Contact</a></li>
+      <li><a href="/Carte"> Carte</a></li>
+      <li><a href="/Contact"> Contact</a></li>
+      <li><a href="/Contact"> A propos</a></li>
     </ul>
   </div>
   <div id="map"></div>
@@ -39,6 +41,7 @@
     scrollWheelZoom: false,
     tap: false
   });
+  map.locate({setView: true, maxZoom: 11});
   /* icone radar */
   var radarTour = L.icon({
     iconUrl: 'icon/picto-radar-tour.png',
