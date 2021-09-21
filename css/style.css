@@ -14,13 +14,10 @@ body {
 }
 #map-title {
 		position: relative;
-    /* margin-top: 10px; */
     margin-left: 15%;
     margin-right: 15%;
     background: white;
     display: flex;
-    /* float: none; */
-    /* border: 2px solid rgba(0,0,0,0.2); */
     padding: 7px 15px;
     font-family: Helvetica;
     font-weight: bold;
