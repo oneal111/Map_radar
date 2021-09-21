@@ -39,7 +39,7 @@ ul li a {
   font-weight: bold;
   border-top-left-radius: 30px;
   /* border-top-right-radius: 30px; */
-  font-size: 11px;
+  font-size: 11px; 
   z-index: 800;
   align-items: center;
   box-shadow: 20px 0 80px -6px rgb(0 0 0 / 20%);
