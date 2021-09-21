@@ -2,7 +2,7 @@
 A simple Leaflet map template for new users to fork their own copy, edit, and host on GitHub Pages
 
 ## Link to live map (replace with link to your site)
-https://github.com/oneal111/Map_radar
+https://oneal111.github.io/Map_radar/
 
 ## Create your own
 See step-by-step tutorial at https://HandsOnDataViz.org, an open-access book by Jack Dougherty and Ilya Ilyankou
