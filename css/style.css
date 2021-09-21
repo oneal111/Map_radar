@@ -5,6 +5,7 @@
  
 .navigation {
   position: static;
+  list-style: none;
 }
  
 .navigation li {
