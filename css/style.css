@@ -9,7 +9,26 @@
 }
  
 .menuBouton {
-  text-align: center; 
+  text-align: center;
+  margin: 40px;
+}
+
+.barreBas {
+  position: relative;
+    margin-left: 15%;
+    margin-right: 15%;
+    background: white;
+    display: flex;
+    padding: 9px 19px;
+    font-family: Helvetica;
+    font-weight: bold;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    font-size: 24px;
+    z-index: 800;
+    align-items: center;
+    box-shadow: 0 15px 80px -20px rgb(0 0 0 / 20%);
+    text-align: center;
 }
 body { 
 	margin:0; padding:0; }
@@ -23,7 +42,7 @@ body {
     margin-right: 15%;
     background: white;
     display: flex;
-    padding: 7px 15px;
+    padding: 9px 19px;
     font-family: Helvetica;
     font-weight: bold;
     border-bottom-left-radius: 30px;
