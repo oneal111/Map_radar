@@ -8,6 +8,7 @@
 }
  
 .navigation li {
+  display: inline;
   color: #ba9550;
 }
 
