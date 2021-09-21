@@ -1,16 +1,23 @@
 .barreMenu {
 	display: block;
-    width: 85vw;
-    height: 80px;
-    max-width: 1200px;
-    min-width: 500px;
-    margin-right: auto;
-    margin-left: auto;
+
+}
+
+#map-title {
+		position: relative;
+    /* margin-top: 10px; */
+    margin-left: 15%;
+    margin-right: 15%;
+    background: white;
+    /* float: none; */
+    /* border: 2px solid rgba(0,0,0,0.2); */
+    padding: 6px 8px;
+    font-family: Helvetica;
+    font-weight: bold;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
-    background-color: #fff;
-    box-shadow: 0 15px 80px -20px rgb(0 0 0 / 16%);
-	position: relative;
-    background: #ddd;
-    z-index: 1000;	
+    font-size: 24px;
+    z-index: 800;
+    align-items: center;
+    box-shadow: 0 15px 80px -20px rgb(0 0 0 / 20%);
 }
