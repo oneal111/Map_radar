@@ -12,10 +12,10 @@
   margin: 0;
   list-style: none;
 }
- 
+
 .navigation li {
   display: inline;
-  color: #ba9550;
+  color: #ba9550; 
 }
 
 ul li a {
