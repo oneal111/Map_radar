@@ -24,7 +24,8 @@
   border-top-left-radius: 30px;
   /* border-top-right-radius: 30px; */
   font-size: 11px; 
-  z-index: auto;
+  z-index: 1000;
+  text-decoration:none;
   align-items: center;
   box-shadow: 20px 0 80px -6px rgb(0 0 0 / 20%);
   text-align: center;
@@ -51,3 +52,34 @@ body {
     align-items: center;
     box-shadow: 0 15px 80px -20px rgb(0 0 0 / 20%);
 }
+
+ul.parent, ul.child {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.parent > li {
+  display: inline-block;
+  position: relative;
+}
+
+ul.parent > li a {
+  display: block;
+  background-color: #F6F6F6;
+  padding: 1em 2em;
+  height: 1em
+}
+
+ul.parent > li a:hover {
+  background-color: #34A3EC;
+  color: #FFF;
+}
+
+ul.child {
+  display: none;
+  position: absolute;
+  top: 3em;
+}
+
+ul.child li a { min-width: 100%; }
