@@ -3,7 +3,6 @@
 <head>
   <title>leaflet-map-simple</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta charset="utf-8">
 
   <!-- Load Leaflet code library: see http://leafletjs.com/download.html -->
@@ -22,7 +21,7 @@
 
   <!-- Display the map and title with HTML division tags  -->
   <div id="map-title" class="barreMenu">O sé radar la 
-    <div classe="bouton">
+    <div classe="bouton" style="padding-left: 70%;">
       Contact
     </div>
   </div>
@@ -60,6 +59,16 @@ map.on('locationerror', onLocationError);
   /* icone radar */
   var radarTour = L.icon({
     iconUrl: 'icon/picto-radar-tour.png',
+    shadowUrl: 'icon/ombre-radar-tour.png',
+
+    iconSize:     [19, 47], // size of the icon
+    shadowSize:   [25, 32], // size of the shadow
+    iconAnchor:   [11, 47], // point of the icon which will correspond to marker's location
+    shadowAnchor: [2, 31],  // the same for the shadow
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
+var radarGen = L.icon({
+    iconUrl: 'icon/radar-gen.png',
     shadowUrl: 'icon/ombre-radar-tour.png',
 
     iconSize:     [19, 47], // size of the icon
