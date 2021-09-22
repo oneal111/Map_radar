@@ -22,8 +22,6 @@
   border-top-left-radius: 30px;
   font-size: 11px; 
   z-index: 1000;
-  text-decoration:none;
-  align-items: center;
   box-shadow: 20px 0 80px -6px rgb(0 0 0 / 20%);
 }
 body { 
