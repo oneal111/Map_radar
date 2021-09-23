@@ -37,6 +37,7 @@
   <!-- Create the interactive map content with JavaScript (.js) -->
 
   <script>
+
   //Afficher le menu du bouton +
     function menuBoutton() {
       document.getElementById("menuDropdown").classList.toggle("show");
@@ -64,14 +65,16 @@
     tap: false
   });
 
+
+//curseur de position
   map.locate({setView: true, maxZoom: 11});
 
   function onLocationFound(e) {
-    var radius = e.accuracy;
-
-    L.circle(e.latlng, radius).addTo(map);
+    var lat = (e.latlng.lat);
+    var lng = (e.latlng.lng);
+    var newLatLng = new L.LatLng(lat, lng);
+    marker.setLatLng(newLatLng); 
 }
-
 
 map.on('locationfound', onLocationFound);
 
