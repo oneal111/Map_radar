@@ -66,18 +66,16 @@
   });
 
   //Localisation
-  map.locate({setView: true, maxZoom: 11});
+  map.locate({setView: false, maxZoom: 11});
 
   function onLocationFound(e) {
     var radius = e.accuracy;
 
     L.circle(e.latlng, radius).addTo(map);
+    L.marker(e.latlng).addTo(map);
 }
 
-setInterval(() => {
-  map.on('locationfound', onLocationFound);
-        }, 5000);
-//map.on('locationfound', onLocationFound);
+  update(map.on('locationfound', onLocationFound));
 
 function onLocationError(e) {
     alert(e.message);
