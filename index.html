@@ -44,8 +44,8 @@
 
     //fermer le menuDropdown quand on clique a côté
         window.onclick = function(event) {
-      if (!event.target.matches('.dropbtn')) {
-        var dropdowns = document.getElementsByClassName("dropdown-content");
+      if (!event.target.matches('.boutton')) {
+        var dropdowns = document.getElementsByClassName("contenuBoutton");
         var i;
         for (i = 0; i < dropdowns.length; i++) {
           var openDropdown = dropdowns[i];
@@ -55,7 +55,7 @@
         }
       }
     }
-    
+
   /* Set up the initial map center and zoom level */
   var map = L.map('map', {
     center: [16.2569, -61.5481], // EDIT coordinates to re-center map
