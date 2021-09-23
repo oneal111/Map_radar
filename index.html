@@ -20,14 +20,42 @@
 <body>
 
   <!-- Display the map and title with HTML division tags  -->
-  <div id="map-title" class="barreMenu"><p>O sé radar la</p> </div style="background: white;"><div class="divButton"><button class="bouton bouton1">+</button></div>
+  <div id="map-title" class="barreMenu"><p>O sé radar la</p> </div style="background: white;">
+
+    <div class="divButton">
+      <button onclick="menuBoutton()" id="menuDropdown" class="bouton bouton1">+</button>
+        <div class="contenuBoutton">
+          <a href="#">Test</a>
+          <a href="#">Test2</a>
+          <a href="#">Test3</a>
+        </div>
+    </div>
+
   <div id="map"></div>
   <div class="barreBas"> <p style="margin: 1%;">Copyright: O'neal Jachel</p> <p><a href="a" style="text-decoration: none;">Contact</a></p></div>
 
   <!-- Create the interactive map content with JavaScript (.js) -->
 
   <script>
+  //Afficher le menu du bouton +
+    function menuBoutton() {
+      document.getElementById("menuDropdown").classList.toggle("show");
+    }
 
+    //fermer le menuDropdown quand on clique a côté
+        window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+    
   /* Set up the initial map center and zoom level */
   var map = L.map('map', {
     center: [16.2569, -61.5481], // EDIT coordinates to re-center map
