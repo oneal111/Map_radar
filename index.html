@@ -65,16 +65,15 @@
     tap: false
   });
 
-
-//curseur de position
-  map.locate({setView: true, maxZoom: 11});
+  //Localisation
+  /*map.locate({setView: true, maxZoom: 11});
 
   function onLocationFound(e) {
-    var lat = (e.latlng.lat);
-    var lng = (e.latlng.lng);
-    var newLatLng = new L.LatLng(lat, lng);
-    marker.setLatLng(newLatLng); 
+    var radius = e.accuracy;
+
+    L.circle(e.latlng, radius).addTo(map);
 }
+
 
 map.on('locationfound', onLocationFound);
 
@@ -82,7 +81,44 @@ function onLocationError(e) {
     alert(e.message);
 }
 
-map.on('locationerror', onLocationError);
+map.on('locationerror', onLocationError);*/
+
+
+if(!navigator.geolocation) {
+        console.log("Your browser doesn't support geolocation feature!")
+    } else {
+        setInterval(() => {
+            navigator.geolocation.getCurrentPosition(getPosition)
+        }, 5000);
+    }
+
+    var marker, circle;
+
+    function getPosition(position){
+        // console.log(position)
+        var lat = position.coords.latitude
+        var long = position.coords.longitude
+        var accuracy = position.coords.accuracy
+
+        if(marker) {
+            map.removeLayer(marker)
+        }
+
+        if(circle) {
+            map.removeLayer(circle)
+        }
+
+        marker = L.marker([lat, long])
+        circle = L.circle([lat, long], {radius: accuracy})
+
+        var featureGroup = L.featureGroup([marker, circle]).addTo(map)
+
+        map.fitBounds(featureGroup.getBounds())
+
+        console.log("Your coordinate is: Lat: "+ lat +" Long: "+ long+ " Accuracy: "+ accuracy)
+
+
+
 
   /* icone radar */
   var radarTour = L.icon({
