@@ -34,7 +34,7 @@ body {
 		position: relative;
     margin-left: 15%;
     margin-right: 15%;
-    background: white;
+    background: #c8ead3bf;
     display: flex;
     justify-content: center;
     padding: 0px 19px;
@@ -48,7 +48,7 @@ body {
 }
 
 .bouton {
-  background-color: #4CAF50; /* Green */
+  background-color: #004E89;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -84,7 +84,8 @@ body {
 }
 
 .contenuBoutton a {
-  color: black;
+  color: rgb(255, 255, 255);
+  background: #004e89c7;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
