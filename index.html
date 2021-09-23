@@ -66,7 +66,7 @@
   });
 
   //Localisation
-  /*map.locate({setView: true, maxZoom: 11});
+  map.locate({setView: true, maxZoom: 11});
 
   function onLocationFound(e) {
     var radius = e.accuracy;
@@ -74,16 +74,18 @@
     L.circle(e.latlng, radius).addTo(map);
 }
 
-
-map.on('locationfound', onLocationFound);
+setInterval(() => {
+  map.on('locationfound', onLocationFound);
+        }, 5000);
+//map.on('locationfound', onLocationFound);
 
 function onLocationError(e) {
     alert(e.message);
 }
 
-map.on('locationerror', onLocationError);*/
+map.on('locationerror', onLocationError);
 
-
+/*
 if(!navigator.geolocation) {
         console.log("Your browser doesn't support geolocation feature!")
     } else {
@@ -116,7 +118,7 @@ if(!navigator.geolocation) {
         map.fitBounds(featureGroup.getBounds())
 
         console.log("Your coordinate is: Lat: "+ lat +" Long: "+ long+ " Accuracy: "+ accuracy)
-      }
+      }*/
 
 
 
