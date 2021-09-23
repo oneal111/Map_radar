@@ -69,25 +69,15 @@
 
 
 
-    var gpsMarker = null;
-    var gpsCircleMarker;
+  function onLocationFound(e) {
+  var radius = e.accuracy / 2;
+  L.marker(e.latlng).addTo(map)
+    .bindPopup("You are within " + radius + " meters from this point").openPopup();
+  L.circle(e.latlng, radius).addTo(map);
+}
 
-    function onLocationFound(e) {
-      var radius = e.accuracy / 2;
-      var popupContent = "You are within " + radius + " meters from this point";
-
-      if (gpsMarker == null) {
-        gpsMarker = L.marker(e.latlng, {icon: IsyUserIcon}).addTo(map);
-        gpsMarker.bindPopup(popupContent).openPopup();
-        gpsCircleMarker = L.circle(e.latlng, radius).addTo(map);
-        }
-      else {
-      gpsMarker.getPopup().setContent(popupContent);   
-      gpsMarker.setLatLng(e.latlng);
-      gpsCircleMarker.setLatLng(e.latlng);
-      gpsCircleMarker.setRadius(radius);
-      }
-    }
+map.on('locationfound', onLocationFound);
+map.locate({setView: true, watch: true, maxZoom: 8});
 
 
 
