@@ -66,7 +66,34 @@
   });
 
   //Localisation
-  map.locate({setView: false, maxZoom: 11});
+
+
+
+    var gpsMarker = null;
+    var gpsCircleMarker;
+
+    function onLocationFound(e) {
+      var radius = e.accuracy / 2;
+      var popupContent = "You are within " + radius + " meters from this point";
+
+      if (gpsMarker == null) {
+        gpsMarker = L.marker(e.latlng, {icon: IsyUserIcon}).addTo(map);
+        gpsMarker.bindPopup(popupContent).openPopup();
+        gpsCircleMarker = L.circle(e.latlng, radius).addTo(map);
+        }
+      else {
+      gpsMarker.getPopup().setContent(popupContent);   
+      gpsMarker.setLatLng(e.latlng);
+      gpsCircleMarker.setLatLng(e.latlng);
+      gpsCircleMarker.setRadius(radius);
+      }
+    }
+
+
+
+
+
+  /*map.locate({setView: false, maxZoom: 11});
 
   function onLocationFound(e) {
     var radius = e.accuracy;
@@ -81,7 +108,7 @@ function onLocationError(e) {
     alert(e.message);
 }
 
-map.on('locationerror', onLocationError);
+map.on('locationerror', onLocationError);*/
 
 /*
 if(!navigator.geolocation) {
