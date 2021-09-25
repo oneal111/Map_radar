@@ -80,7 +80,6 @@
       marker= L.marker(e.latlng).addTo(map);
       circle= L.circle(e.latlng, radius).addTo(map);
 
-
 }
 
 map.on('locationfound', onLocationFound);
@@ -128,8 +127,8 @@ var radarGen = L.icon({
   }).addTo(map);
 
   /* Display a point marker with pop-up text */
-    L.marker([16.40919, -61.46830], {icon: radarTour}).addTo(map) // EDIT marker coordinates
-    .bindPopup("BEAUPLAN - Port-Louis_v <br/> Sens: Dans les deux sens <br/> 70 km/h"); // EDIT pop-up text message
+    L.marker([16.40919, -61.46830], {icon: radarGen}).addTo(map) // EDIT marker coordinates
+    .bindPopup("N8 - Port-Louis <br/> <strong>Sens</strong>: Dans les deux sens <br/> <strong>70 km/h</strong>"); // EDIT pop-up text message
   
     L.marker([16.21058, -61.60182], {icon: radarTour}).addTo(map)
     .bindPopup("N1 - Petit-Bourg<br/> Sens: Basse-Terre vers Pointe-a-Pitre<br/> 110km/h");
