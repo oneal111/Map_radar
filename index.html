@@ -31,6 +31,11 @@
         </div>
     </div>
 
+    <div>
+      <button class="me">
+        Me
+      </button>
+    </div>
   <div id="map"></div>
   <div class="barreBas"> <p style="margin: 1%;">Copyright: O'neal Jachel</p> <p><a href="contact.html" style="text-decoration: none;">Contact</a></p></div>
 
@@ -39,6 +44,16 @@
   <script>
 
   //Afficher le menu du bouton +
+
+    //var btn = header.getElementsByClassName("me");
+    document.getElementByClassName("me")
+    .addEventListener("click", function() {
+      if (this.classList.contains("active")) {
+       this.classList.remove("active");
+      } else this.classList.add("active");
+    });
+
+
     function menuBoutton() {
       document.getElementById("menuDropdown").classList.toggle("show");
     }

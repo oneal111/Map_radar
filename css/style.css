@@ -94,3 +94,13 @@ body {
 }
  
 .show {display: block;}
+
+.me{
+  background-color: #004E89;
+  color: white;
+}
+
+.active{
+  background-color: #666;
+  color: white;
+}
