@@ -32,7 +32,7 @@
     </div>
 
     <div>
-      <button class="me">
+      <button class="me" onclick="meButton()">
         Me
       </button>
     </div>
@@ -46,12 +46,13 @@
   //Afficher le menu du bouton +
 
     //var btn = header.getElementsByClassName("me");
-    document.getElementByClassName("me").addEventListener("click", function() {
-      if (this.classList.contains("active")) {
-       this.classList.remove("active");
-      } else this.classList.add("active");
-    });
-
+    function meButton(){
+      document.getElementByClassName("me").addEventListener("click", function() {
+        if (this.classList.contains("active")) {
+        this.classList.remove("active");
+        } else this.classList.add("active");
+      });
+    }
 
     function menuBoutton() {
       document.getElementById("menuDropdown").classList.toggle("show");
