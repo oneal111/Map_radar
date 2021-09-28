@@ -66,6 +66,7 @@ body {
 .divButton {
   position: relative;
   float: right;
+  visibility: hidden;
   display: inline-block;
   z-index: 800;
 }
