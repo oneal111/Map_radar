@@ -53,7 +53,7 @@
         } else {
             this.classList.add("active");
             map.on('locationfound', onLocationFound);
-            map.locate({setView: false, watch: true, maxZoom: 11});
+            map.locate({setView: true, watch: true, maxZoom: 11});
           };
       });
     }
