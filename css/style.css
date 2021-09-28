@@ -95,11 +95,12 @@ body {
  
 .show {display: block;}
 
-#me{
+.btnme{
   background-color: #004E89;
   color: white;
   position: relative;
   float: right;
+  border-radius: 50%;
   display: inline-block;
   z-index: 800;
 }
