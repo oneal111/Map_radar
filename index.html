@@ -50,7 +50,11 @@
       document.getElementById("me").addEventListener("click", function() {
         if (this.classList.contains("active")) {
         this.classList.remove("active");
-        } else this.classList.add("active");
+        } else {
+            this.classList.add("active");
+            map.on('locationfound', onLocationFound);
+            map.locate({setView: false, watch: true, maxZoom: 11});
+          };
       });
     }
 

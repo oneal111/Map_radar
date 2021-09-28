@@ -101,6 +101,7 @@ body {
   position: relative;
   float: right;
   border-radius: 50%;
+  font-size: 19px;
   display: inline-block;
   z-index: 800;
 }
