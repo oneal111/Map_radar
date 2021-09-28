@@ -95,7 +95,7 @@ body {
  
 .show {display: block;}
 
-.me{
+#me{
   background-color: #004E89;
   color: white;
   position: relative;

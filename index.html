@@ -32,7 +32,7 @@
     </div>
 
     <div>
-      <button class="me" onclick="meButton()">
+      <button id="me" onclick="meButton()">
         Me
       </button>
     </div>
@@ -47,7 +47,7 @@
 
     //var btn = header.getElementsByClassName("me");
     function meButton(){
-      document.getElementByClassName("me").addEventListener("click", function() {
+      document.getElementById("me").addEventListener("click", function() {
         if (this.classList.contains("active")) {
         this.classList.remove("active");
         } else this.classList.add("active");
