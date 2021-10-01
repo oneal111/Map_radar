@@ -45,18 +45,20 @@
 
   //Afficher le menu du bouton +
 
-    //var btn = header.getElementsByClassName("me");
     function meButton(){
       document.getElementById("me").addEventListener("click", function() {
         if (this.classList.contains("active")) {
-        this.classList.remove("active");
+          this.classList.remove("active");
+          map.on('locationfound', onLocationFound);
+          map.locate({setView: false, watch: true});
         } else {
             this.classList.add("active");
             map.on('locationfound', onLocationFound);
-            map.locate({setView: true, watch: true, maxZoom: 11});
+            map.locate({setView: true, watch: true});
           };
       });
     }
+    
 
     function menuBoutton() {
       document.getElementById("menuDropdown").classList.toggle("show");
