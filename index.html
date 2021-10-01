@@ -110,38 +110,6 @@ var findMeMap = L.map('changing-icons', {scrollWheelZoom: false})
                   .setView([37.8, -96], 4);
 
 
-L.easyButton({
-  states:[
-    {
-      stateName: 'unloaded',
-      icon: 'fa-location-arrow',
-      title: 'load image',
-      onClick: function(control){
-        control.state("loading");
-        control.map.on('locationfound', function(e){
-          this.setView(e.latlng, 17);
-          control.state('loaded');
-        });
-        control.map.on('locationerror', function(){
-          control.state('error');
-        });
-        control.map.locate()
-      }
-    }, {
-      stateName: 'loading',
-      icon: 'fa-spinner fa-spin'
-    }, {
-      stateName: 'loaded',
-      icon: 'fa-thumbs-up'
-    }, {
-      stateName: 'error',
-      icon: 'fa-frown-o',
-      title: 'location not found'
-    }
-  ]
-}).addTo(map);
-
-
   /* icone radar */
   var radarTour = L.icon({
     iconUrl: 'icon/picto-radar-tour.png',
@@ -181,6 +149,42 @@ var radarGen = L.icon({
         OpenStreetMap</a> contributors, &copy;\
         <a href="https://www.thunderforest.com">Thunderforest</a>'
   }).addTo(map);
+
+
+
+
+
+  L.easyButton({
+  states:[
+    {
+      stateName: 'unloaded',
+      icon: 'fa-location-arrow',
+      title: 'load image',
+      onClick: function(control){
+        control.state("loading");
+        control.map.on('locationfound', function(e){
+          this.setView(e.latlng, 17);
+          control.state('loaded');
+        });
+        control.map.on('locationerror', function(){
+          control.state('error');
+        });
+        control.map.locate()
+      }
+    }, {
+      stateName: 'loading',
+      icon: 'fa-spinner fa-spin'
+    }, {
+      stateName: 'loaded',
+      icon: 'fa-thumbs-up'
+    }, {
+      stateName: 'error',
+      icon: 'fa-frown-o',
+      title: 'location not found'
+    }
+  ]
+}).addTo(map);
+
 
   /* Display a point marker with pop-up text */
     L.marker([16.40919, -61.46830], {icon: radarGen}).addTo(map) // EDIT marker coordinates
