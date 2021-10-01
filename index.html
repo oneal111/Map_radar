@@ -109,8 +109,6 @@ map.locate({setView: false, watch: true, maxZoom: 11});
 var findMeMap = L.map('changing-icons', {scrollWheelZoom: false})
                   .setView([37.8, -96], 4);
 
-L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png')
-  .addTo(map);
 
 L.easyButton({
   states:[
