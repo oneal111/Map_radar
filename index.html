@@ -31,11 +31,6 @@
         </div>
     </div>
 
-    <div>
-      <button id="me" class="btnme" onclick="meButton()">
-        Me
-      </button>
-    </div>
   <div id="map"></div>
   <div class="barreBas"> <p style="margin: 1%;">Copyright: O'neal Jachel</p> <p><a href="contact.html" style="text-decoration: none;">Contact</a></p></div>
 
@@ -44,7 +39,7 @@
   <script>
 
   //Afficher le menu du bouton +
-
+/*
     function meButton(){
       document.getElementById("me").addEventListener("click", function() {
         if (this.classList.contains("active")) {
@@ -58,6 +53,7 @@
           };
       });
     }
+*/
     
 
     function menuBoutton() {
@@ -104,8 +100,44 @@
 
 }
 
+
+
 map.on('locationfound', onLocationFound);
 map.locate({setView: false, watch: true, maxZoom: 11});
+
+
+L.easyButton({
+  states:[
+    {
+      stateName: 'unloaded',
+      icon: 'fa-location-arrow',
+      title: 'load image',
+      onClick: function(control){
+        control.state("loading");
+        control._map.on('locationfound', function(e){
+          control._map.on('locationfound', onLocationFound);
+          control._map.locate({setView: true, watch: true, maxZoom: 11});
+          control.state('loaded');
+        });
+        control._map.on('locationerror', function(){
+          control.state('error');
+        });
+        control._map.locate()
+      }
+    }, {
+      stateName: 'loading',
+      icon: 'fa-spinner fa-spin'
+    }, {
+      stateName: 'loaded',
+      icon: 'fa-thumbs-up'
+    }, {
+      stateName: 'error',
+      icon: 'fa-frown-o',
+      title: 'location not found'
+    }
+  ]
+}).addTo(map);
+
 
 
   /* icone radar */
