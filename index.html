@@ -120,14 +120,14 @@ L.easyButton({
       title: 'load image',
       onClick: function(control){
         control.state("loading");
-        control._map.on('locationfound', function(e){
+        control.map.on('locationfound', function(e){
           this.setView(e.latlng, 17);
           control.state('loaded');
         });
-        control._map.on('locationerror', function(){
+        control.map.on('locationerror', function(){
           control.state('error');
         });
-        control._map.locate()
+        control.map.locate()
       }
     }, {
       stateName: 'loading',
