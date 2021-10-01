@@ -8,9 +8,7 @@
   <!-- Load Leaflet code library: see http://leafletjs.com/download.html -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
-  
-  <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
+
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 
   <!-- google adsense -->
@@ -108,6 +106,13 @@ map.on('locationfound', onLocationFound);
 map.locate({setView: false, watch: true, maxZoom: 11});
 
 
+var helloPopup = L.popup().setContent('Hello World!');
+
+L.easyButton('fa-globe', function(btn, map){
+    helloPopup.setLatLng(map.getCenter()).openOn(map);
+}).addTo(map);
+
+/*
 L.easyButton({
   states:[
     {
@@ -138,7 +143,7 @@ L.easyButton({
       title: 'location not found'
     }
   ]
-}).addTo(map);
+}).addTo(map);*/
 
 
 
