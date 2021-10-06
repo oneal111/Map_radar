@@ -107,36 +107,9 @@ map.on('locationfound', onLocationFound);
 map.locate({setView: false, watch: true, maxZoom: 11});
 
 
-L.easyButton({
-  states:[
-    {
-      stateName: 'unloaded',
-      icon: '&starf',
-      title: 'load image',
-      onClick: function(control){
-        control.state("loading");
-        control._map.on('locationfound', function(e){
-          this.setView(e.latlng, 17);
-          control.state('loaded');
-        });
-        control._map.on('locationerror', function(){
-          control.state('error');
-        });
-        control._map.locate()
-      }
-    }, {
-      stateName: 'loading',
-      icon: '&starf'
-    }, {
-      stateName: 'loaded',
-      icon: '&starf'
-    }, {
-      stateName: 'error',
-      icon: '&starf',
-      title: 'location not found'
-    }
-  ]
-}).addTo(findMeMap);
+L.easyButton( '<span class="star">&starf;</span>', function(){
+  alert('you just clicked the html entity \&starf;');
+}).addTo(map);
 
 
   /* icone radar */
