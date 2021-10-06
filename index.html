@@ -108,7 +108,8 @@ map.locate({setView: false, watch: true, maxZoom: 11});
 
 
 L.easyButton( '<span class="star">&starf;</span>', function(){
-  alert('you just clicked the html entity \&starf;');
+  control._map.on('locationfound', function(e){
+          this.setView(e.latlng, 17);
 }).addTo(map);
 
 
