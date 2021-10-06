@@ -111,14 +111,14 @@ map.locate({setView: false, watch: true, maxZoom: 11});
 var toggle = L.easyButton({
   states: [{
     stateName: 'findme',
-    icon: 'icon ion-location-outline',
+    icon: 'icon/arrow-undo-circle-outline.svg',
     title: 'Find me',
     onClick: function(control) {
       map.locate({setView: true, watch: true, maxZoom: 11});
       control.state('remove-markers');
     }
   }, {
-    icon: 'icon ion-arrow-undo-circle-outline',
+    icon: 'icon/location-outline.svg',
     stateName: 'leaveme',
     onClick: function(control) {
       map.locate({setView: false, watch: true, maxZoom: 11});
