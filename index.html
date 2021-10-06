@@ -115,14 +115,14 @@ var toggle = L.easyButton({
     title: 'Find me',
     onClick: function(control) {
       map.locate({setView: true, watch: true, maxZoom: 11});
-      control.state('remove-markers');
+      control.state('leaveme');
     }
   }, {
     icon: '<span>&olarr;</span>',
     stateName: 'leaveme',
     onClick: function(control) {
       map.locate({setView: false, watch: true, maxZoom: 11});
-      control.state('add-markers');
+      control.state('findme');
     },
     title: 'Leave me'
   }]
