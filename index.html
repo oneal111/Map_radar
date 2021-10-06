@@ -8,6 +8,7 @@
   <!-- Load Leaflet code library: see http://leafletjs.com/download.html -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.css">
 
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 
@@ -15,6 +16,7 @@
 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4462288225798878"
           crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
 
 </head>
 <body>
@@ -103,6 +105,11 @@
 
 map.on('locationfound', onLocationFound);
 map.locate({setView: false, watch: true, maxZoom: 11});
+
+
+L.easyButton( 'glyphicon-star', function(){
+  alert('you just clicked a glyphicon');
+}).addTo(map);
 
 
   /* icone radar */
