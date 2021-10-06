@@ -112,7 +112,7 @@ L.easyButton( '<span class="star">&starf;</span>', function(){
     this.setView(e.latlng, 17);
   });*/
   map.on('locationfound', onLocationFound);
-  map.locate({setView: false, watch: true, maxZoom: 11});
+  map.locate({setView: true, watch: true, maxZoom: 11});
 }).addTo(map);
 
 
