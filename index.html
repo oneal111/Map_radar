@@ -111,7 +111,7 @@ L.easyButton({
   states:[
     {
       stateName: 'unloaded',
-      icon: 'fa-location-arrow',
+      icon: '&starf',
       title: 'load image',
       onClick: function(control){
         control.state("loading");
@@ -126,13 +126,13 @@ L.easyButton({
       }
     }, {
       stateName: 'loading',
-      icon: 'fa-spinner fa-spin'
+      icon: '&starf'
     }, {
       stateName: 'loaded',
-      icon: 'fa-thumbs-up'
+      icon: '&starf'
     }, {
       stateName: 'error',
-      icon: 'fa-frown-o',
+      icon: '&starf',
       title: 'location not found'
     }
   ]
