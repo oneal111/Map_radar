@@ -277,7 +277,7 @@ var Beauplan = L.marker([16.40919, -61.46830], {icon: radarGen}) // EDIT marker 
         }
         
       var radius = e.accuracy / 2;
-      marker = L.marker.slideTo([(e.latlng),20], {
+      marker = L.marker.slideTo([e.latlng,20], {
         duration: 2000,
         keepAtCenter: true,
       }).addTo(map);
