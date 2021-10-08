@@ -41,24 +41,6 @@
 
   <script>
 
-  //Afficher le menu du bouton +
-/*
-    function meButton(){
-      document.getElementById("me").addEventListener("click", function() {
-        if (this.classList.contains("active")) {
-          this.classList.remove("active");
-          map.on('locationfound', onLocationFound);
-          map.locate({setView: false, watch: true});
-        } else {
-            this.classList.add("active");
-            map.on('locationfound', onLocationFound);
-            map.locate({setView: true, watch: true});
-          };
-      });
-    }
-*/
-    
-
     function menuBoutton() {
       document.getElementById("menuDropdown").classList.toggle("show");
     }
@@ -171,16 +153,16 @@ var radarGen = L.icon({
         <a href="https://www.thunderforest.com">Thunderforest</a>'
   }).addTo(map);
 
-  var Actif = L.layerGroup([Beauplan, Colin, Gosier_BK, Trois_Ri,
+  var radarActif = L.layerGroup([Beauplan, Colin, Gosier_BK, Trois_Ri,
     St_Marie, Marina, Lajaille1, Lajaille2, Gr_Ravine, Jardiland,
     PointeSalee, VitoSF, CrecheSF, Goyave, ElectricSF, BioSF,CabinetSF, Lamentin, Cocoyer,
     AbymesVersML, Chauvel, GrandCamp, SortieGrFond, Boisripeau, GastonFeuillard, FortDelgres, Dumanoir, 
     PrimoGourbeyre, Moule, RichevalML,TotalML,VieuxFort,VitoVH,PlageVH, MairieBaillif,McdoAbymes,AnseBertrand
   ]);
 
-  var Brûlé = L.layerGroup([Gosier_Salines, Traversee, Baimbridge, Deshaies, Bergevin, CochonPlusAbymes]);
+  var radarBrule = L.layerGroup([Gosier_Salines, Traversee, Baimbridge, Deshaies, Bergevin, CochonPlusAbymes]);
 
-  var All = L.layerGroup([Beauplan, Colin, Gosier_BK, Trois_Ri,
+  var radarAll = L.layerGroup([Beauplan, Colin, Gosier_BK, Trois_Ri,
     St_Marie, Marina, Lajaille1, Lajaille2, Gr_Ravine, Jardiland,
     PointeSalee, VitoSF, CrecheSF, Goyave, ElectricSF, BioSF,CabinetSF, Lamentin, Cocoyer,
     AbymesVersML, Chauvel, GrandCamp, SortieGrFond, Boisripeau, GastonFeuillard, FortDelgres, Dumanoir, 
@@ -188,13 +170,13 @@ var radarGen = L.icon({
     Gosier_Salines, Traversee, Baimbridge, Deshaies, Bergevin, CochonPlusAbymes
   ]);
 
-  var baseMaps = {
-    "Tout les radars": All,
-    "Radar actif": Actif,
-    "Radar brûlé": Brûlé
+  var overlayMaps = {
+    "Tout les radars": radarAll,
+    "Radar actif": radarActif,
+    "Radar brûlé": radarBrule
 };
   
-L.control.layers(baseMaps).addTo(map);
+  L.control.layers(null, overlayMaps).addTo(map);
 
   /* Display a point marker with pop-up text */
     var Beauplan = L.marker([16.40919, -61.46830], {icon: radarGen}).addTo(map) // EDIT marker coordinates
