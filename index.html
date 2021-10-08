@@ -84,6 +84,7 @@
     scrollWheelZoom: false,
     rotate: true,
     tap: false,
+    layers: [All]
   });
  
   //Localisation
@@ -194,6 +195,7 @@ var radarGen = L.icon({
 };
   
 L.control.layers(baseMaps).addTo(map);
+
   /* Display a point marker with pop-up text */
     var Beauplan = L.marker([16.40919, -61.46830], {icon: radarGen}).addTo(map) // EDIT marker coordinates
     .bindPopup("N8 - Port-Louis <br/> <strong>Sens</strong>: Dans les deux sens <br/> <strong>70 km/h</strong>"); // EDIT pop-up text message
