@@ -59,44 +59,6 @@
       }
     }
  
-  //Localisation
-  var marker, circle;
-  function onLocationFound(e) {
-
-      if(marker) {
-            map.removeLayer(marker)
-        }
-        if(circle) {
-            map.removeLayer(circle)
-        }
-        
-      var radius = e.accuracy / 2;
-      marker= L.marker(e.latlng).addTo(map);
-      circle= L.circle(e.latlng, radius).addTo(map);
-
-}
-
-var toggle = L.easyButton({
-  states: [{
-    stateName: 'findme',
-    icon: '<span>&hearts;</span>',
-    title: 'Find me',
-    onClick: function(control) {
-      map.locate({setView: true, watch: true, maxZoom: 11});
-      control.state('leaveme');
-    }
-  }, {
-    icon: '<span>&olarr;</span>',
-    stateName: 'leaveme',
-    onClick: function(control) {
-      map.locate({setView: false, watch: true, maxZoom: 11});
-      control.state('findme');
-    },
-    title: 'Leave me'
-  }]
-});
-toggle.addTo(map);
-
 
   /* icone radar */
   var radarTour = L.icon({
@@ -173,6 +135,45 @@ var radarGen = L.icon({
     scrollWheelZoom: false,
     layers: [layerMap, radarAll]
   });
+
+  //Localisation
+  var marker, circle;
+  function onLocationFound(e) {
+
+      if(marker) {
+            map.removeLayer(marker)
+        }
+        if(circle) {
+            map.removeLayer(circle)
+        }
+        
+      var radius = e.accuracy / 2;
+      marker= L.marker(e.latlng).addTo(map);
+      circle= L.circle(e.latlng, radius).addTo(map);
+
+}
+
+var toggle = L.easyButton({
+  states: [{
+    stateName: 'findme',
+    icon: '<span>&hearts;</span>',
+    title: 'Find me',
+    onClick: function(control) {
+      map.locate({setView: true, watch: true, maxZoom: 11});
+      control.state('leaveme');
+    }
+  }, {
+    icon: '<span>&olarr;</span>',
+    stateName: 'leaveme',
+    onClick: function(control) {
+      map.locate({setView: false, watch: true, maxZoom: 11});
+      control.state('findme');
+    },
+    title: 'Leave me'
+  }]
+});
+toggle.addTo(map);
+
 
   map.on('locationfound', onLocationFound);
   map.locate({setView: false, watch: true, maxZoom: 11});
