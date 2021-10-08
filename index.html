@@ -170,13 +170,18 @@ var radarGen = L.icon({
     Gosier_Salines, Traversee, Baimbridge, Deshaies, Bergevin, CochonPlusAbymes
   ]);
 
+
+  var baseMaps = {
+    "base": layerMap
+};
+
   var overlayMaps = {
     "Tout les radars": radarAll,
     "Radar actif": radarActif,
     "Radar brûlé": radarBrule
 };
   
-  L.control.layers(null, overlayMaps).addTo(map);
+  L.control.layers(baseMaps, overlayMaps).addTo(map);
 
   /* Display a point marker with pop-up text */
     var Beauplan = L.marker([16.40919, -61.46830], {icon: radarGen}).addTo(map) // EDIT marker coordinates
