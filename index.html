@@ -76,11 +76,6 @@
 
 }
 
-
-map.on('locationfound', onLocationFound);
-map.locate({setView: false, watch: true, maxZoom: 11});
-
-
 var toggle = L.easyButton({
   states: [{
     stateName: 'findme',
@@ -179,6 +174,8 @@ var radarGen = L.icon({
     layers: [layerMap, radarAll]
   });
 
+  map.on('locationfound', onLocationFound);
+  map.locate({setView: false, watch: true, maxZoom: 11});
 
   L.control.layers(baseMaps, overlayMaps).addTo(map);
 
