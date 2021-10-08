@@ -83,7 +83,7 @@
     zoom: 11,  // EDIT from 1 (zoomed out) to 18 (zoomed in)
     scrollWheelZoom: false,
     rotate: true,
-    tap: false
+    tap: false,
   });
  
   //Localisation
@@ -179,6 +179,21 @@ var radarGen = L.icon({
 
   var Brûlé = L.layerGroup([Gosier_Salines, Traversee, Baimbridge, Deshaies, Bergevin, CochonPlusAbymes]);
 
+  var All = L.layerGroup([Beauplan, Colin, Gosier_BK, Trois_Ri,
+    St_Marie, Marina, Lajaille1, Lajaille2, Gr_Ravine, Jardiland,
+    PointeSalee, VitoSF, CrecheSF, Goyave, ElectricSF, BioSF,CabinetSF, Lamentin, Cocoyer,
+    AbymesVersML, Chauvel, GrandCamp, SortieGrFond, Boisripeau, GastonFeuillard, FortDelgres, Dumanoir, 
+    PrimoGourbeyre, Moule, RichevalML,TotalML,VieuxFort,VitoVH,PlageVH, MairieBaillif,McdoAbymes,AnseBertrand,
+    Gosier_Salines, Traversee, Baimbridge, Deshaies, Bergevin, CochonPlusAbymes
+  ]);
+
+  var baseMaps = {
+    "Tout les radars": All,
+    "Radar actif": Actif,
+    "Radar brûlé": Brûlé
+};
+  
+L.control.layers(baseMaps).addTo(map);
   /* Display a point marker with pop-up text */
     var Beauplan = L.marker([16.40919, -61.46830], {icon: radarGen}).addTo(map) // EDIT marker coordinates
     .bindPopup("N8 - Port-Louis <br/> <strong>Sens</strong>: Dans les deux sens <br/> <strong>70 km/h</strong>"); // EDIT pop-up text message
