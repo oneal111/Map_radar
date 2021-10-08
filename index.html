@@ -92,96 +92,9 @@ var radarGen = L.icon({
     popupAnchor:  [-2, -32] // point from which the popup should open relative to the iconAnchor
 });
 
-  /* display basemap tiles -- see others at https://leaflet-extras.github.io/leaflet-providers/preview/ */
-  var layerMap = L.tileLayer(
-    'https://tile.thunderforest.com/atlas/{z}/{x}/{y}.png?apikey=5930698cb58845bbb4ee9113cc45f70a', {
-      attribution: '&copy; <a href="https://osm.org/copyright">\
-        OpenStreetMap</a> contributors, &copy;\
-        <a href="https://www.thunderforest.com">Thunderforest</a>'
-  });
 
-  var radarActif = L.layerGroup([Beauplan, Colin, Gosier_BK, Trois_Ri,
-    St_Marie, Marina, Lajaille1, Lajaille2, Gr_Ravine, Jardiland,
-    PointeSalee, VitoSF, CrecheSF, Goyave, ElectricSF, BioSF,CabinetSF, Lamentin, Cocoyer,
-    AbymesVersML, Chauvel, GrandCamp, SortieGrFond, Boisripeau, GastonFeuillard, FortDelgres, Dumanoir, 
-    PrimoGourbeyre, Moule, RichevalML,TotalML,VieuxFort,VitoVH,PlageVH, MairieBaillif,McdoAbymes,AnseBertrand
-  ]);
-
-  var radarBrule = L.layerGroup([Gosier_Salines, Traversee, Baimbridge, Deshaies, Bergevin, CochonPlusAbymes]);
-
-  var radarAll = L.layerGroup([Beauplan, Colin, Gosier_BK, Trois_Ri,
-    St_Marie, Marina, Lajaille1, Lajaille2, Gr_Ravine, Jardiland,
-    PointeSalee, VitoSF, CrecheSF, Goyave, ElectricSF, BioSF,CabinetSF, Lamentin, Cocoyer,
-    AbymesVersML, Chauvel, GrandCamp, SortieGrFond, Boisripeau, GastonFeuillard, FortDelgres, Dumanoir, 
-    PrimoGourbeyre, Moule, RichevalML,TotalML,VieuxFort,VitoVH,PlageVH, MairieBaillif,McdoAbymes,AnseBertrand,
-    Gosier_Salines, Traversee, Baimbridge, Deshaies, Bergevin, CochonPlusAbymes
-  ]);
-
-
-  var baseMaps = {
-    "base": layerMap
-};
-
-  var overlayMaps = {
-    "Tout les radars": radarAll,
-    "Radar actif": radarActif,
-    "Radar brûlé": radarBrule
-};
-  
-  /* Set up the initial map center and zoom level */
-  var map = L.map('map', {
-    center: [16.2569, -61.5481], // EDIT coordinates to re-center map
-    zoom: 11,  // EDIT from 1 (zoomed out) to 18 (zoomed in)
-    scrollWheelZoom: false,
-    layers: [layerMap, radarAll]
-  });
-
-  //Localisation
-  var marker, circle;
-  function onLocationFound(e) {
-
-      if(marker) {
-            map.removeLayer(marker)
-        }
-        if(circle) {
-            map.removeLayer(circle)
-        }
-        
-      var radius = e.accuracy / 2;
-      marker= L.marker(e.latlng).addTo(map);
-      circle= L.circle(e.latlng, radius).addTo(map);
-
-}
-
-var toggle = L.easyButton({
-  states: [{
-    stateName: 'findme',
-    icon: '<span>&hearts;</span>',
-    title: 'Find me',
-    onClick: function(control) {
-      map.locate({setView: true, watch: true, maxZoom: 11});
-      control.state('leaveme');
-    }
-  }, {
-    icon: '<span>&olarr;</span>',
-    stateName: 'leaveme',
-    onClick: function(control) {
-      map.locate({setView: false, watch: true, maxZoom: 11});
-      control.state('findme');
-    },
-    title: 'Leave me'
-  }]
-});
-toggle.addTo(map);
-
-
-  map.on('locationfound', onLocationFound);
-  map.locate({setView: false, watch: true, maxZoom: 11});
-
-  L.control.layers(baseMaps, overlayMaps).addTo(map);
-
-  /* Display a point marker with pop-up text */
-    var Beauplan = L.marker([16.40919, -61.46830], {icon: radarGen}) // EDIT marker coordinates
+/* Display a point marker with pop-up text */
+var Beauplan = L.marker([16.40919, -61.46830], {icon: radarGen}) // EDIT marker coordinates
     .bindPopup("N8 - Port-Louis <br/> <strong>Sens</strong>: Dans les deux sens <br/> <strong>70 km/h</strong>"); // EDIT pop-up text message
   
     var Colin = L.marker([16.21058, -61.60182], {icon: radarTour})
@@ -310,6 +223,94 @@ toggle.addTo(map);
     var AnseBertrand = L.marker([16.44138, -61.42712], {icon: radarTour})
     .bindPopup("D120 - Anse-Bertrand<br /><strong>Sens</strong>: Dans les deux sens<br/> <strong>80km/h</strong>");
 
+
+  /* display basemap tiles -- see others at https://leaflet-extras.github.io/leaflet-providers/preview/ */
+  var layerMap = L.tileLayer(
+    'https://tile.thunderforest.com/atlas/{z}/{x}/{y}.png?apikey=5930698cb58845bbb4ee9113cc45f70a', {
+      attribution: '&copy; <a href="https://osm.org/copyright">\
+        OpenStreetMap</a> contributors, &copy;\
+        <a href="https://www.thunderforest.com">Thunderforest</a>'
+  });
+
+  var radarActif = L.layerGroup([Beauplan, Colin, Gosier_BK, Trois_Ri,
+    St_Marie, Marina, Lajaille1, Lajaille2, Gr_Ravine, Jardiland,
+    PointeSalee, VitoSF, CrecheSF, Goyave, ElectricSF, BioSF,CabinetSF, Lamentin, Cocoyer,
+    AbymesVersML, Chauvel, GrandCamp, SortieGrFond, Boisripeau, GastonFeuillard, FortDelgres, Dumanoir, 
+    PrimoGourbeyre, Moule, RichevalML,TotalML,VieuxFort,VitoVH,PlageVH, MairieBaillif,McdoAbymes,AnseBertrand
+  ]);
+
+  var radarBrule = L.layerGroup([Gosier_Salines, Traversee, Baimbridge, Deshaies, Bergevin, CochonPlusAbymes]);
+
+  var radarAll = L.layerGroup([Beauplan, Colin, Gosier_BK, Trois_Ri,
+    St_Marie, Marina, Lajaille1, Lajaille2, Gr_Ravine, Jardiland,
+    PointeSalee, VitoSF, CrecheSF, Goyave, ElectricSF, BioSF,CabinetSF, Lamentin, Cocoyer,
+    AbymesVersML, Chauvel, GrandCamp, SortieGrFond, Boisripeau, GastonFeuillard, FortDelgres, Dumanoir, 
+    PrimoGourbeyre, Moule, RichevalML,TotalML,VieuxFort,VitoVH,PlageVH, MairieBaillif,McdoAbymes,AnseBertrand,
+    Gosier_Salines, Traversee, Baimbridge, Deshaies, Bergevin, CochonPlusAbymes
+  ]);
+
+
+  var baseMaps = {
+    "base": layerMap
+};
+
+  var overlayMaps = {
+    "Tout les radars": radarAll,
+    "Radar actif": radarActif,
+    "Radar brûlé": radarBrule
+};
+  
+  /* Set up the initial map center and zoom level */
+  var map = L.map('map', {
+    center: [16.2569, -61.5481], // EDIT coordinates to re-center map
+    zoom: 11,  // EDIT from 1 (zoomed out) to 18 (zoomed in)
+    scrollWheelZoom: false,
+    layers: [layerMap, radarAll]
+  });
+
+  //Localisation
+  var marker, circle;
+  function onLocationFound(e) {
+
+      if(marker) {
+            map.removeLayer(marker)
+        }
+        if(circle) {
+            map.removeLayer(circle)
+        }
+        
+      var radius = e.accuracy / 2;
+      marker= L.marker(e.latlng).addTo(map);
+      circle= L.circle(e.latlng, radius).addTo(map);
+
+}
+
+var toggle = L.easyButton({
+  states: [{
+    stateName: 'findme',
+    icon: '<span>&hearts;</span>',
+    title: 'Find me',
+    onClick: function(control) {
+      map.locate({setView: true, watch: true, maxZoom: 11});
+      control.state('leaveme');
+    }
+  }, {
+    icon: '<span>&olarr;</span>',
+    stateName: 'leaveme',
+    onClick: function(control) {
+      map.locate({setView: false, watch: true, maxZoom: 11});
+      control.state('findme');
+    },
+    title: 'Leave me'
+  }]
+});
+toggle.addTo(map);
+
+
+  map.on('locationfound', onLocationFound);
+  map.locate({setView: false, watch: true, maxZoom: 11});
+
+  L.control.layers(baseMaps, overlayMaps).addTo(map);
 
   </script>
 </body>
