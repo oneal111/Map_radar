@@ -310,7 +310,7 @@ toggle.addTo(map);
   map.on('locationfound', onLocationFound);
   map.locate({setView: false, watch: true, maxZoom: 11});
 
-  L.control.layers(baseMaps, overlayMaps).addTo(map);
+  L.control.layers(null, overlayMaps).addTo(map);
 
   </script>
 </body>
