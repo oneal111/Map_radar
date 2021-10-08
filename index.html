@@ -277,10 +277,7 @@ var Beauplan = L.marker([16.40919, -61.46830], {icon: radarGen}) // EDIT marker 
         }
         
       var radius = e.accuracy / 2;
-      marker = L.marker.slideTo([20,20], {
-        duration: 2000,
-        keepAtCenter: true,
-      }).addTo(map);
+      marker= L.marker(e.latlng).addTo(map);
       circle= L.circle(e.latlng, radius).addTo(map);
 
 }
@@ -291,7 +288,7 @@ var toggle = L.easyButton({
     icon: '<span>&hearts;</span>',
     title: 'Find me',
     onClick: function(control) {
-      map.locate({setView: true, watch: true, maxZoom: 11});
+      map.locate({setView: true, watch: true, drawMarker: true});
       control.state('leaveme');
     }
   }, {
