@@ -19,6 +19,9 @@
   <script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script>
   <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
 
+  <script src="https://unpkg.com/leaflet-drift-marker@2.0.0/lib/index.js"></script>
+  
+
 </head>
 <body>
 
@@ -40,7 +43,6 @@
   <!-- Create the interactive map content with JavaScript (.js) -->
 
   <script>
-
     function menuBoutton() {
       document.getElementById("menuDropdown").classList.toggle("show");
     }
@@ -263,7 +265,6 @@ var Beauplan = L.marker([16.40919, -61.46830], {icon: radarGen}) // EDIT marker 
     layers: [layerMap, radarAll]
   });
 
-  import DriftMarker from "leaflet-drift-marker";
   //Localisation
   var circle;
   const marker = new DriftMarker([10, 10]);
