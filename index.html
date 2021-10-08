@@ -84,7 +84,7 @@
     scrollWheelZoom: false,
     rotate: true,
     tap: false,
-    layers: [All]
+    layers: [layerMap, All]
   });
  
   //Localisation
@@ -164,7 +164,7 @@ var radarGen = L.icon({
 });
 
   /* display basemap tiles -- see others at https://leaflet-extras.github.io/leaflet-providers/preview/ */
-  L.tileLayer(
+  var layerMap = L.tileLayer(
     'https://tile.thunderforest.com/atlas/{z}/{x}/{y}.png?apikey=5930698cb58845bbb4ee9113cc45f70a', {
       attribution: '&copy; <a href="https://osm.org/copyright">\
         OpenStreetMap</a> contributors, &copy;\
