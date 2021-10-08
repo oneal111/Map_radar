@@ -280,7 +280,7 @@ var Beauplan = L.marker([16.40919, -61.46830], {icon: radarGen}) // EDIT marker 
       marker= L.marker(e.latlng).addTo(map);
       circle= L.circle(e.latlng, radius).addTo(map);
 
-      marker.slideTo(e.latlng, {duration: 2000, keepAtCenter: true});
+      marker.slideTo(e.latlng, {duration: 2000, keepAtCenter: false});
 
 }
 
