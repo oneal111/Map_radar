@@ -58,16 +58,6 @@
         }
       }
     }
-
-  /* Set up the initial map center and zoom level */
-  var map = L.map('map', {
-    center: [16.2569, -61.5481], // EDIT coordinates to re-center map
-    zoom: 11,  // EDIT from 1 (zoomed out) to 18 (zoomed in)
-    scrollWheelZoom: false,
-    rotate: true,
-    tap: false,
-    layers: [layerMap, radarAll]
-  });
  
   //Localisation
   var marker, circle;
@@ -181,6 +171,15 @@ var radarGen = L.icon({
     "Radar brûlé": radarBrule
 };
   
+  /* Set up the initial map center and zoom level */
+  var map = L.map('map', {
+    center: [16.2569, -61.5481], // EDIT coordinates to re-center map
+    zoom: 11,  // EDIT from 1 (zoomed out) to 18 (zoomed in)
+    scrollWheelZoom: false,
+    layers: [layerMap, radarAll]
+  });
+
+
   L.control.layers(baseMaps, overlayMaps).addTo(map);
 
   /* Display a point marker with pop-up text */
